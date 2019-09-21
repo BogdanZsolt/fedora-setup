@@ -19,6 +19,8 @@ sudo rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
 sudo sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
 # Install Spotify repo
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
+# Add la Capitain cursor theme repositorie 
+sudo dnf copr enable tcg/themes
 # Update cache for package installs
 sudo dnf makecache
 # vscode repo
@@ -30,14 +32,14 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 # Install TeamViewer
 # sudo dnf install https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm -y
 # grab all packages to install
-sudo dnf install $(cat fedora.packages) -y
+sudo dnf install -y $(cat fedora.packages)
 
 #Custom shell prompt with aliases Source: https://www.linuxquestions.org/questions/linux-general-1/ultimate-prompt-and-bashrc-file-4175518169/
 # cat ~/bashrc.aliases >> ~/.bashrc
 
 #Disable Wayland and use Xorg
-# sudo sed -i '/WaylandEnable/s/^#//g' /etc/gdm/custom.conf
+sudo sed -i '/WaylandEnable/s/^#//g' /etc/gdm/custom.conf
 
 # laptop battery setup
+sudo dnf install -y tlp tlp-rdw
 sudo systemctl enable tlp.service
-sudo systemctl enable tlp-sleep.service
