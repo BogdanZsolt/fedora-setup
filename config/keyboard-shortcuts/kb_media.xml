@@ -1,0 +1,24 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+home='<Shift><Super>Return'
+www='<Primary><Super>Return'
+
+[custom-keybindings/custom0]
+binding='<Alt>m'
+command='playerctl --player=spotify play-pause'
+name='Spotify play, pause'
+
+[custom-keybindings/custom1]
+binding='<Alt>n'
+command='playerctl --player=spotify next'
+name='Spotify next track'
+
+[custom-keybindings/custom2]
+binding='<Alt>p'
+command='playerctl --player=spotify previous'
+name='Spotify previous track'
+
+[custom-keybindings/custom3]
+binding='<Super>Return'
+command='gnome-terminal'
+name='Launch terminal emulator'

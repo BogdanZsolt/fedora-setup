@@ -41,6 +41,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'airblade/vim-gitgutter'
 Plug 'chiel92/vim-autoformat'
+Plug 'Yggdroot/indentLine'
 Plug 'shougo/denite.nvim'
 
 call plug#end()
