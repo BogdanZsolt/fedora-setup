@@ -44,6 +44,10 @@ sudo sed -i '/WaylandEnable/s/^#//g' /etc/gdm/custom.conf
 sudo dnf install -y tlp tlp-rdw
 sudo systemctl enable tlp.service
 
+#zsh autosuggestion setup
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+#vim ~/.zshrc >> source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 #Chromium browser & drm install
 sudo dnf install -y chromium chromium-libs-media-freeworld
 sudo dnf install -y gstreamer1-plugins-base gstreamer1-plugins-good gstreamer1-plugins-bad-free gstreamer1-plugins-bad-free-extras gstreamer1-plugins-good-extras libdvdread libdvdnav lsdvd
@@ -53,3 +57,7 @@ sudo dnf install -y p7zip p7zip-plugins
 sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install -y brave-browser
+
+#install Stacer - Linux System optimizer
+sudo dnf copr enable atim/stacer -y
+sudo dnf install -y stacer
